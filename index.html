@@ -16,11 +16,11 @@
 					<div class="tac">
 						<label class="bt bt-success bt-tpl">
 							<strong>选择json模版</strong>
-							<input required class="hide" id="jsonTpl" type="file" name="jsonTpl">
+							<input required class="hide j_file" id="jsonTpl" type="file" name="jsonTpl">
 						</label>
 						<label class="bt bt-info bt-tpl">
 							<strong>选择html模版</strong>
-							<input required class="hide" id="htmlTpl" type="file" name="htmlTpl">
+							<input required class="hide j_file" id="htmlTpl" type="file" name="htmlTpl">
 						</label>
 					</div>
 					<div class="bt-wrap">
@@ -36,7 +36,7 @@
 		<div id="page2" class="page">
 			<form id="jsonForm">
 				<fieldset>
-					<legend>创建静态模版json</legend>
+					<legend>输入相关字段</legend>
 					<div id="inputArea"></div>
 					<div class="bt-wrap">
 						<button type="reset" title="清空所有输入框" class="bt">清空所有输入框</button>
@@ -45,7 +45,7 @@
 					</div>
 				</fieldset>
 			</form>
-			<form id="htmlForm">
+			<form id="htmlForm" class="hide">
 				<fieldset>
 					<legend>输出的HTML</legend>
 					<textarea name="outPut" placeholder="样式预览" id="outArea" rows="20"></textarea>

@@ -22,6 +22,7 @@ $(function() {
 			var html = "";
 			for (name in data) {
 				var val = data[name];
+				html += '<label>' + val + '</label>'
 				html += '<textarea name="' + name + '" placeholder="' + val + '"></textarea>';
 			}
 			$('#inputArea').append(html);
@@ -47,7 +48,9 @@ $(function() {
 			var outData = this.serialize(data);
 			this.loadFileById('htmlTpl', function(ret) {
 				var outPut = _.template(ret)(outData);
+
 				$('#outArea').val(outPut);
+				$('#htmlForm').removeClass('hide');
 				_it.saveIt(outPut);
 			});
 		},
@@ -89,6 +92,7 @@ $(function() {
 			this.loadFileById('htmlTpl', function(ret) {
 				var outPut = _.template(ret)(outData);
 				$('#outArea').val(outPut);
+				$('#htmlForm').removeClass('hide');
 			});
 		},
 		/**
@@ -123,6 +127,11 @@ $(function() {
 			$('#htmlForm').on('submit', function(e) {
 				e.preventDefault();
 				_it.downLoad();
+			});
+
+			//文件修改
+			$('.j_file').on('change', function() {
+				$(this).prev('strong').text(this.value);
 			});
 		}
 	};
