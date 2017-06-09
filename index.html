@@ -2,28 +2,28 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>创建静态模版</title>
+		<title>静态模版生成工具</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
-		<h1>自动创建静态模版</h1>
+		<h1>静态模版生成工具</h1>
 
 		<!-- 上传模版 S-->
 		<div id="page1" class="page _on">
 			<form id="jsonTplForm">
 				<fieldset>
 					<legend class="hide">选择模版</legend>
-					<div class="tac">
-						<label class="bt bt-success bt-tpl">
+					<div class="tac bt-tpls">
+						<label class="_json">
 							<strong>选择json模版</strong>
 							<input required class="hide j_file" id="jsonTpl" type="file" name="jsonTpl">
 						</label>
-						<label class="bt bt-info bt-tpl">
+						<label class="_html">
 							<strong>选择html模版</strong>
 							<input required class="hide j_file" id="htmlTpl" type="file" name="htmlTpl">
 						</label>
 					</div>
-					<div class="bt-wrap">
+					<div class="bt-wrap tac">
 						<button type="submit" title="使用这两个模版" class="bt bt-primary">使用这两个模版</button>
 					</div>
 				</fieldset>
@@ -36,12 +36,12 @@
 		<div id="page2" class="page">
 			<form id="jsonForm">
 				<fieldset>
-					<legend>输入相关字段</legend>
+					<legend class="hide">输入相关字段</legend>
 					<div id="inputArea"></div>
-					<div class="bt-wrap">
+					<div class="bt-wrap tar">
 						<button type="reset" title="清空所有输入框" class="bt">清空所有输入框</button>
 						<button id="htmlPre" type="button" title="预览" class="bt bt-success">预览</button>
-						<button type="submit" title="预览并下载" class="bt bt-primary">预览并下载</button>
+						<button type="submit" title="下载Html" class="bt bt-primary">下载Html</button>
 					</div>
 				</fieldset>
 			</form>
@@ -49,8 +49,8 @@
 				<fieldset>
 					<legend>输出的HTML</legend>
 					<textarea name="outPut" placeholder="样式预览" id="outArea" rows="20"></textarea>
-					<div class="bt-wrap">
-						<button type="submit" title="下载" class="bt bt-primary">下载</button>
+					<div class="bt-wrap tar">
+						<button type="submit" title="下载Html" class="bt bt-primary">下载Html</button>
 					</div>
 				</fieldset>
 			</form>

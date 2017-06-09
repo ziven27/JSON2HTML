@@ -48,9 +48,6 @@ $(function() {
 			var outData = this.serialize(data);
 			this.loadFileById('htmlTpl', function(ret) {
 				var outPut = _.template(ret)(outData);
-
-				$('#outArea').val(outPut);
-				$('#htmlForm').removeClass('hide');
 				_it.saveIt(outPut);
 			});
 		},
