@@ -29,7 +29,11 @@ $(function() {
 
 			this.goPageByIndex(1);
 		},
-		saveIt: function(outPut) {
+		/**
+		 * [makeFileByString 根据字符串生成文件]
+		 * @param  {[strong]} outPut [需要输出的字符串文件]
+		 */
+		makeFileByString: function(outPut) {
 			saveAs(
 				new Blob(
 					[outPut], {
@@ -39,16 +43,15 @@ $(function() {
 			);
 		},
 		/**
-		 * [createOutput 生成对应的html文件，并在输入框内部预览]
+		 * [createOutput 生成对应的html文件]
 		 * @param  {[type]} data [description]
 		 * @return {[type]}      [description]
 		 */
 		createOutput: function(data) {
 			var _it = this;
-			var outData = this.serialize(data);
 			this.loadFileById('htmlTpl', function(ret) {
-				var outPut = _.template(ret)(outData);
-				_it.saveIt(outPut);
+				var outPut = _.template(ret)(data);
+				_it.makeFileByString(outPut);
 			});
 		},
 		/**
@@ -63,7 +66,6 @@ $(function() {
 				var it = data[item];
 				outData[it.name] = it.value;
 			}
-
 			return outData;
 		},
 		/**
@@ -79,10 +81,10 @@ $(function() {
 				callback(this.result);
 			};
 		},
-		downLoad: function() {
-			var outPut = $('#outArea').val();
-			this.saveIt(outPut);
-		},
+		/**
+		 * [preview 预览]
+		 * @return {[type]} [description]
+		 */
 		preview: function() {
 			var formData = $('#jsonForm').serializeArray();
 			var outData = this.serialize(formData);
@@ -99,6 +101,12 @@ $(function() {
 		init: function() {
 
 			var _it = this;
+
+			//选择文件上传
+			$('.j_file').on('change', function() {
+				$(this).prev('strong').text(this.value);
+			});
+
 			//监听json模版输入表单
 			$('#jsonTplForm').on('submit', function(e) {
 				e.preventDefault();
@@ -111,10 +119,11 @@ $(function() {
 			$('#jsonForm').on('submit', function(e) {
 				e.preventDefault();
 				var data = $(this).serializeArray();
-				_it.createOutput(data);
+				var serData = _it.serialize(data)
+				_it.createOutput(serData);
 			});
 
-			//预览
+			//点击预览
 			$('#htmlPre').on('click', function(e) {
 				e.preventDefault();
 				_it.preview();
@@ -123,13 +132,10 @@ $(function() {
 			//下载文件
 			$('#htmlForm').on('submit', function(e) {
 				e.preventDefault();
-				_it.downLoad();
+				var outPut = $('#outArea').val();
+				_it.makeFileByString(outPut);
 			});
 
-			//文件修改
-			$('.j_file').on('change', function() {
-				$(this).prev('strong').text(this.value);
-			});
 		}
 	};
 	_app.init();

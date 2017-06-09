@@ -14,7 +14,7 @@ fieldset { border: none; padding: 1em 0 0; }
 .bt-info { color: #fff; background-color: #5bc0de; border-color: #46b8da; }
 .bt:hover { opacity: 0.8; }
 .bt:active { transform: scale(0.95); }
-.bt-tpls { display: table; table-layout: fixed; text-align: center; margin: 0 auto; border-radius: 100px; overflow: hidden; width: 80%; white-space: nowrap; }
+.bt-tpls { display: table; table-layout: fixed; text-align: center; margin: 0 auto; border-radius: 4px; overflow: hidden; width: 80%; white-space: nowrap; }
 .bt-tpls label { display: table-cell; padding: 2em 0; color: #fff; transition: 0.3s; cursor: pointer; }
 .bt-tpls label:hover { opacity: 0.6; }
 .bt-tpls label strong { font-weight: normal; }
