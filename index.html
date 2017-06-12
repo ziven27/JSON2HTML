@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>静态模版生成工具</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css?v=2">
 	</head>
 	<body>
 		<h1>静态模版生成工具</h1>
@@ -13,19 +13,15 @@
 			<form id="jsonTplForm">
 				<fieldset>
 					<legend class="hide">选择模版</legend>
-					<div class="tac bt-tpls">
-						<label class="_json">
-							<strong>选择json模版</strong>
-							<input required class="hide j_file" id="jsonTpl" type="file" name="jsonTpl">
-						</label>
-						<label class="_html">
-							<strong>选择html模版</strong>
-							<input required class="hide j_file" id="htmlTpl" type="file" name="htmlTpl">
-						</label>
-					</div>
-					<div class="bt-wrap tac">
-						<button type="submit" title="使用这两个模版" class="bt bt-primary">使用这两个模版</button>
-					</div>
+					<label class="bt bt-tpl _json bt-success">
+						<strong>选择上传 "jsonTpl.json" 文件</strong>
+						<input required class="hide j_file" id="jsonTpl" type="file" name="jsonTpl">
+					</label>
+					<label class="bt bt-tpl _html bt-info">
+						<strong>选择上传 "htmlTpl.html" 文件</strong>
+						<input required class="hide j_file" id="htmlTpl" type="file" name="htmlTpl">
+					</label>
+					<button class="bt bt-tpl _sub bt-primary" type="submit" title="使用这两个模版" >使用这两个模版</button>
 				</fieldset>
 			</form>
 		</div>
