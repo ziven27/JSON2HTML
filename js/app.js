@@ -9,7 +9,6 @@ $(function() {
 		goPageByIndex: function(index) {
 			$('.page').eq(index).addClass('_on').siblings('._on').removeClass('_on');
 		},
-
 		/**
 		 * [createInputByJsonTpl 通过json模版，创建输入框]
 		 * @param  {[type]} data [description]
@@ -20,13 +19,20 @@ $(function() {
 				return;
 			}
 			var html = "";
-			for (name in data) {
-				var val = data[name];
-				html += '<label>' + val + '</label>'
-				html += '<textarea name="' + name + '" placeholder="' + val + '"></textarea>';
-			}
+			//递归遍历整个数据
+			var recursion = function(d) {
+				for (key in d) {
+					var val = d[key];
+					if (typeof val === "Object") {
+						recursion(val);
+					} else {
+						html += '<label>' + val + '</label>';
+						html += '<textarea name="' + name + '" placeholder="' + val + '"></textarea>';
+					}
+				}
+			};
+			recursion(data);
 			$('#inputArea').append(html);
-
 			this.goPageByIndex(1);
 		},
 		/**
