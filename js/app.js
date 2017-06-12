@@ -18,6 +18,8 @@ $(function() {
 			if (!data) {
 				return;
 			}
+			//如果type是data说明这个是json数据而非模版
+			var directRender = data._type && data._type === 'data';
 			var html = '<table class="m-input">';
 			//递归遍历整个数据
 			var recursion = function(d) {
@@ -28,14 +30,14 @@ $(function() {
 					} else {
 						html += '<tr>'
 						html += '<td class="input-label">' + val + '</td>';
-						html += '<td class="input-control"><textarea name="' + key + '" placeholder="' + val + '"></textarea></td>';
+						html += '<td class="input-control"><textarea name="' + key + '" placeholder="' + val + '">' + (directRender ? val:'') + '</textarea></td>';
 						html += '<tr/>';
 					}
 				}
 			};
 			recursion(data);
 
-			html+="</table>";
+			html += "</table>";
 			$('#inputArea').append(html);
 			this.goPageByIndex(1);
 		},
@@ -108,9 +110,11 @@ $(function() {
 		 * [downLoadJson description]
 		 * @return {[type]} [description]
 		 */
-		downLoadJson:function(){
+		downLoadJson: function() {
 			var formData = $('#jsonForm').serializeArray();
-			var outData = JSON.stringify(this.serialize(formData));
+			var dealData = this.serialize(formData);
+			dealData['_type'] = "data";
+			var outData = JSON.stringify(dealData);
 			saveAs(
 				new Blob(
 					[outData], {

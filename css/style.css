@@ -12,6 +12,7 @@ fieldset { border: none; padding: 1em 0 0; }
 .hide { position: absolute; clip: rect(0 0 0 0); top: 0; }
 .bt { white-space: nowrap; display: inline-block; padding: 1em 3em; margin-bottom: 0; font-size: 14px; font-weight: 400; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; background-image: none; border: 1px solid transparent; border-radius: 4px; transition: 0.3s; color: #333; background-color: #fff; border-color: #ccc; }
 .bt + .bt { margin-left: 10px; }
+.bt:disabled{ opacity: 0.3; pointer-events: none; }
 .bt-primary { color: #fff; background-color: #337ab7; border-color: #2e6da4; }
 .bt-success { color: #fff; background-color: #5cb85c; border-color: #4cae4c; }
 .bt-info { color: #fff; background-color: #5bc0de; border-color: #46b8da; }
