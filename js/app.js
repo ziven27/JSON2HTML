@@ -28,7 +28,7 @@ $(function() {
 					} else {
 						html += '<tr>'
 						html += '<td class="input-label">' + val + '</td>';
-						html += '<td class="input-control"><textarea name="' + key + '" placeholder="' + val + '"></textarea><td>';
+						html += '<td class="input-control"><textarea name="' + key + '" placeholder="' + val + '"></textarea></td>';
 						html += '<tr/>';
 					}
 				}
@@ -105,6 +105,21 @@ $(function() {
 			});
 		},
 		/**
+		 * [downLoadJson description]
+		 * @return {[type]} [description]
+		 */
+		downLoadJson:function(){
+			var formData = $('#jsonForm').serializeArray();
+			var outData = JSON.stringify(this.serialize(formData));
+			saveAs(
+				new Blob(
+					[outData], {
+						type: "text/plain;charset=" + document.characterSet
+					}
+				), "data.json"
+			);
+		},
+		/**
 		 * [init 初始化]
 		 * @return {[type]} [description]
 		 */
@@ -144,6 +159,12 @@ $(function() {
 				e.preventDefault();
 				var outPut = $('#outArea').val();
 				_it.makeFileByString(outPut);
+			});
+
+			//下载JSON文件
+			$('#downLoadJson').on('click', function(e) {
+				e.preventDefault();
+				_it.downLoadJson();
 			});
 
 		}

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>静态模版生成工具</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css?v=2">
+		<link rel="stylesheet" type="text/css" href="css/style.css?v=3">
 	</head>
 	<body>
 		<h1>静态模版生成工具</h1>
@@ -34,10 +34,11 @@
 				<fieldset>
 					<legend class="hide">输入相关字段</legend>
 					<div id="inputArea"></div>
-					<div class="bt-wrap tar">
-						<button id="htmlPre" type="button" title="预览" class="bt">预览（忽略我）</button>
-						<button type="reset" title="清空所有输入框" class="bt">清空所有输入框</button>
-						<button type="submit" title="下载Html" class="bt bt-primary">下载Html</button>
+					<div class="bt-wrap oh">
+						<button id="htmlPre" type="button" title="预览" class="bt fl">预览（忽略我）</button>
+						<button id="downLoadJson" type="button" title="下载Json" class="bt bt-success fl">下载Json(可以下次接着使用)</button>
+						<button type="submit" title="下载Html" class="bt bt-primary fr">下载Html</button>
+						<button type="reset" title="清空所有输入框" class="bt fr">清空所有输入框</button>
 					</div>
 				</fieldset>
 			</form>
@@ -57,6 +58,6 @@
 		<script src="js/underscore-min.js"></script>
 		<script src="js/Blob.js"></script>
 		<script src="js/FileSaver.min.js"></script>
-		<script src="js/app.js?v=1"></script>
+		<script src="js/app.js?v=2"></script>
 	</body>
 </html>
