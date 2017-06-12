@@ -28,7 +28,7 @@ $(function() {
 					} else {
 						html += '<tr>'
 						html += '<td class="input-label">' + val + '</td>';
-						html += '<td class="input-control"><textarea name="' + name + '" placeholder="' + val + '"></textarea><td>';
+						html += '<td class="input-control"><textarea name="' + key + '" placeholder="' + val + '"></textarea><td>';
 						html += '<tr/>';
 					}
 				}
