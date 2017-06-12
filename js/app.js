@@ -18,20 +18,24 @@ $(function() {
 			if (!data) {
 				return;
 			}
-			var html = "";
+			var html = '<table class="m-input">';
 			//递归遍历整个数据
 			var recursion = function(d) {
 				for (key in d) {
 					var val = d[key];
-					if (typeof val === "Object") {
+					if (typeof val === "object") {
 						recursion(val);
 					} else {
-						html += '<label>' + val + '</label>';
-						html += '<textarea name="' + name + '" placeholder="' + val + '"></textarea>';
+						html += '<tr>'
+						html += '<td class="input-label">' + val + '</td>';
+						html += '<td class="input-control"><textarea name="' + name + '" placeholder="' + val + '"></textarea><td>';
+						html += '<tr/>';
 					}
 				}
 			};
 			recursion(data);
+
+			html+="</table>";
 			$('#inputArea').append(html);
 			this.goPageByIndex(1);
 		},
