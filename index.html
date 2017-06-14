@@ -3,28 +3,21 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>静态模版生成工具</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css?v=3">
+		<link rel="stylesheet" type="text/css" href="css/style.css?v=5">
 	</head>
 	<body>
 		<h1>静态模版生成工具</h1>
 
 		<!-- 上传模版 S-->
-		<div id="page1" class="page _on">
-			<form id="jsonTplForm">
-				<fieldset>
-					<legend class="hide">选择模版</legend>
-					<label class="bt bt-tpl _json bt-success">
-						<strong>选择上传 "jsonTpl.json" 文件</strong>
-						<input required class="hide j_file" id="jsonTpl" type="file" name="jsonTpl">
-					</label>
-					<label class="bt bt-tpl _html bt-info">
-						<strong>选择上传 "htmlTpl.html" 文件</strong>
-						<input required class="hide j_file" id="htmlTpl" type="file" name="htmlTpl">
-					</label>
-					<button class="bt bt-tpl _sub bt-primary" type="submit" title="使用这两个模版" >使用这两个模版</button>
-				</fieldset>
-			</form>
-		</div>
+		<form id="page1" class="page _on">
+			<fieldset>
+				<legend class="hide">选择模版</legend>
+				<label class="bt bt-block _json bt-primary">
+					<strong>选择"htmlTpl.html"上传</strong>
+					<input required class="hide j_file" id="htmlTpl" type="file">
+				</label>
+			</fieldset>
+		</form>
 		<!-- 上传模版 E-->
 
 
@@ -35,19 +28,23 @@
 					<legend class="hide">输入相关字段</legend>
 					<div id="inputArea"></div>
 					<div class="bt-wrap oh">
-						<button id="htmlPre" type="button" title="预览" class="bt fl">预览（忽略我）</button>
-						<button id="downLoadJson" type="button" title="下载Json" class="bt bt-success fl">下载Json(可以下次接着使用)</button>
+						<label class="bt bt-success fl">
+							<strong>上传数据模版</strong>
+							<input class="hide" id="upLoadDataTpl" type="file">
+						</label>
+						<button id="downLoadDataTpl" type="button" title="预览" class="bt fl bt-info">下载数据模版</button>
 						<button type="submit" title="下载Html" class="bt bt-primary fr">下载Html</button>
 						<button type="reset" title="清空所有输入框" class="bt fr">清空所有输入框</button>
+						<button id="htmlPre" type="button" title="预览" class="bt fr">Leave me alone</button>
 					</div>
 				</fieldset>
 			</form>
 			<form id="htmlForm" class="hide">
 				<fieldset>
-					<legend>输出的HTML</legend>
-					<textarea name="outPut" placeholder="样式预览" id="outArea" rows="20"></textarea>
+					<legend>预览输出的HTML</legend>
+					<textarea name="outPut" placeholder="样式预览" id="outArea" rows="40"></textarea>
 					<div class="bt-wrap tar">
-						<button type="submit" title="下载Html" class="bt bt-primary">下载Html</button>
+						<button type="submit" title="下载Html" class="bt bt-primary">下载预览框内的Html</button>
 					</div>
 				</fieldset>
 			</form>
@@ -56,8 +53,8 @@
 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/underscore-min.js"></script>
-		<script src="js/Blob.js"></script>
+		<script src="js/Blob.min.js"></script>
 		<script src="js/FileSaver.min.js"></script>
-		<script src="js/app.js?v=2"></script>
+		<script src="js/app.min.js?v=2"></script>
 	</body>
 </html>

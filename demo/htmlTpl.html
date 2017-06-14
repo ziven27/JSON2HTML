@@ -1,18 +1,109 @@
-<% 
-	function _getArtical(text){
-		return '<p>'+ text.split('\n').join('</p><p>')+'</p>';
-	}
-%>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-        <title><%= title %></title>
+        <title>WELCOME <%= 译者姓名 %> THE TRANSLATOR OF “ FISHING THE MYRIAD HEAVENS ”</title>
+        <link rel="stylesheet" type="text/css" href="../../common/css/style.css?v=4">
+        <style type="text/css">
+            .m-tit h3 {
+                color: <%= 主要颜色 %>;
+            }
+            .m-artical .m-bt{
+                background-color:<%= 主要颜色 %>; 
+            }
+            .m-tit h3 span:before, .m-tit h3 span:after {
+                background-image: url(img/i-tit.png);
+            }
+        </style>
     </head>
     <body>
+        <!-- logo S -->
+        <a href="https://www.webnovel.com/" title="Qidian International" class="logo">
+            <h1 class="hide">Qidian International</h1>
+            <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><path d="M43.065 85.334A43.32 43.32 0 0 1 0 42.667C0 19.115 18.404 0 42.268 0H128c70.684 0 128 57.77 128 127.602v43.065h42.667c23.552 0 42.666-18.26 42.666-43.065V43.065C341.333 19.285 361.13 0 384 0c23.552 0 42.667 18.404 42.667 42.27V128c0 70.685-57.77 128-127.602 128H256v85.334h127.602c23.78 0 43.065 19.797 43.065 42.666 0 23.552-18.347 42.667-42.468 42.667H42.467C19 426.667 0 406.87 0 384c0-23.552 18.26-42.666 43.065-42.666h127.602V256H43.065A43.32 43.32 0 0 1 0 213.334c0-23.552 18.26-42.667 43.065-42.667h127.602V128c0-23.552-18.262-42.666-43.065-42.666H43.065zm-.398 469.333C19.115 554.667 0 573.64 0 597.987v297.73C0 966.57 57.998 1024 127.63 1024h683.008c23.58 0 42.695-19.797 42.695-42.667 0-23.552-18.972-42.666-43.49-42.666H256v-85.334h43.065c70.485 0 127.602-57.6 127.602-128.398V597.447c0-23.61-19.798-42.78-42.667-42.78-23.552 0-42.667 19.683-42.667 43.178V724.82c0 23.838-19.797 43.18-42.666 43.18H256V512.114c0-23.61-19.797-42.78-42.667-42.78-23.552 0-42.666 18.972-42.666 43.32v426.013H128c-23.552 0-42.667-18.518-42.667-42.553V597.22c0-23.495-19.797-42.553-42.666-42.553zM512 127.744v597.874c0 70.514 57.6 127.715 128.398 127.715h41.87c70.912 0 128.398-57.912 128.398-128.056V553.813c0-23.096 18.888-41.84 43.32-41.84h41.36c23.893 0 43.32 18.345 43.32 41.84v257.65c0 23.097 19.798 41.842 42.667 41.842 23.552 0 42.667-18.347 42.667-42.468v-256.17c0-70.685-57.6-128-128.398-128h-41.87c-70.913 0-128.4 57.913-128.4 128.057v171.434c0 23.097-18.886 41.842-43.32 41.842h-41.358c-23.893 0-43.32-18.347-43.32-42.467v-384.2H896c70.684 0 128-57.912 128-128.056v-85.22A127.66 127.66 0 0 0 896.114 0H639.886A127.886 127.886 0 0 0 512 127.744zm85.333.654c0-23.78 18.347-43.064 41.842-43.064h257.65c23.068 0 41.84 18.26 41.84 43.064v84.537c0 23.78-18.345 43.065-41.84 43.065H597.333V128.398zm384 895.602a42.667 42.667 0 1 0 0-85.333 42.667 42.667 0 0 0 0 85.333z"/></svg>
+        </a>
+        <!-- logo E -->
 
+        <!-- banner S -->
+        <div class="m-banner" style="background-image: url(img/banner.jpg); background-color: #000;">
+            <h2 class="hide">WELCOME <%= 译者姓名 %> THE TRANSLATOR OF “ FISHING THE MYRIAD HEAVENS ”</h2>
+        </div>
+        <!-- banner E-->
+
+        <div class="m-stage">
+            <div class="m-tit">
+                <h3><span>TRANSLATOR’S THOUGHTS</span></h3>
+            </div>
+            <figure class="m-fig">
+                <img src="img/translator.png" width="157" height="157" />
+                <figcaption><%= 译者姓名 %></figcaption>
+            </figure>
+            <div class="m-artical tac wrap">
+                <%=* 译者说的话 %>
+            </div>
+        </div>
+
+        <div class="m-stage _odd">
+            <div class="m-tit">
+                <h3><span>SYNOPSIS</span></h3>
+            </div>
+            <div class="m-artical cf m-syn wrap">
+                <div class="m-syn-hd fl">
+                    <div class="m-cover">
+                        <img src="img/cover.png" width="341" height="429" title="<%= 书名 %>"/>
+                    </div>                    
+                </div>
+                <div class="m-syn-bd oh">
+                    <h4><%= 书名 %></h4>
+                    <%=* 书的简介 %>
+                    <a href="<%= 书的链接 %>" title="READ" class="m-bt j_jumpUrl">READ</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-stage">
+            <div class="m-tit">
+                <h3><span>AUTHOR’S FOREWORD</span></h3>
+            </div>
+            <figure class="m-fig">
+                <img src="img/author.png" width="157" height="157" />
+                <figcaption><%= 作者名字 %></figcaption>
+            </figure>
+            <div class="m-artical tac wrap">
+                <%=* 作者寄语 %>
+            </div>
+        </div>
+
+        <div class="m-stage _odd">
+            <div class="m-tit">
+                <h3><span>AUTHOR’S WORDS TO THE TRANSLATOR</span></h3>
+            </div>
+            <div class="m-artical wrap">
+                <%=* 作者说的话 %>
+            </div>
+        </div>
+        
+        <!-- copyright S -->
+        <p class="tac fs18 m-copyright">copyright&copy;2005-2017 All Rights Reserved</p>
+        <!-- copyright E -->
+
+        <script type="text/javascript" src="https://acts.webnovel.com/2017/component/js/zepto.min.js"></script>
+        <script type="text/javascript" src="https://acts.webnovel.com/2017/component/js/qdsdk.min.js"></script>
+        <script>
+            $(function(){
+                $('.j_jumpUrl').on('click', function (e) {
+                    // 判断是否在客户端内
+                    if( jssdk.isSupport ) {
+                        e.preventDefault();
+                        var hrefArray=$(this).attr('href').split('/');
+                        var bookId=hrefArray[hrefArray.length -1];
+                        jssdk.app.open('https://app.webnovel.com/views/page/book/detail.html?pkgid=1&bookId=' + bookId , 1 );
+                        return false;
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
