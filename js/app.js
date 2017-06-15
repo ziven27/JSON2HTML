@@ -132,6 +132,9 @@ $(function() {
 			}
 			return data;
 		},
+		html2Escape:function(sHtml) {
+		 return sHtml.replace(/[<>&"]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});
+		},
 		/**
 		 * [getHtmlByData 根据数据，渲染html]
 		 * @param  {[{}]} data [description]
@@ -148,6 +151,7 @@ $(function() {
 				if (!userInput) {
 					continue;
 				}
+				userInput=_it.html2Escape(userInput);
 				var name = match[1];
 				if (name.charAt(0) === '*') {
 					userInput = '<p>' + userInput.split('\n').join('</p><p>') + '</p>';
